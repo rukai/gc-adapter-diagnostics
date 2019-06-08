@@ -7,13 +7,13 @@ use failure::{format_err, bail};
 
 fn main() {
     match run() {
-        Ok(_) => {
-            // Kept alive by the mainloop
-        }
-        Err(_) => {
-            // TODO: Need to keep alive on windows
-            thread::sleep(Duration::from_secs(9999999999999));
-        }
+        Ok(_) => { }
+        Err(e) => println!("{}", e),
+    }
+
+    // keep open on windows
+    if cfg!(target_os = "windows") {
+        thread::sleep(Duration::from_secs(9999999999999));
     }
 }
 
