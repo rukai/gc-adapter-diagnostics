@@ -1,0 +1,9 @@
+[package]
+name = "gc_adapter_diagnostics"
+version = "0.1.0"
+authors = ["Rukai <rubickent@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+libusb = "0.3"
+failure = "0.1"
